@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -- Named Function --
+
+        function neeraj() {
+            console.log("Javelin");
+        }
+        neeraj()
+        // -- Anonymous Function --
+        
+        let athlete = function (person) {
+            console.log(`Run ${person}`); 
+        }
+        athlete("Neeraj");
+        // --Arrow Functions--
+
+        let DiamondLeague = () => console.log("Eugene");
+        DiamondLeague();
+
+        // -- Immediately Invoked Function Expression -- 
+
+        (function () {
+             let str = "Good Evening";
+            console.log(str);
+        })();
+
+        // --Higher order function--
+
+        let ary = [4, 20, 22];
+        let newAry = ary.map((j) => j + 10);
+        console.log(newAry);
+
+        // --constructure Function--
+
+        function person(name, place) {
+            this.name = name;
+            this.place = place;
+        }
+
+        let user1 = new person("CodeBustler", "India");
+
+        console.log(`Hello all this is ${user1.name},I am from ${user1.place}.`);
+    </script>
+</body>
+
+</html>

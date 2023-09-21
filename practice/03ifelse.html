@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let kuchbhi = prompt("Please Enter the SUM of 1+1 =")
+        console.log(typeof kuchbhi);
+        data = parseFloat(kuchbhi)
+        console.log(data);
+        console.log(typeof data);
+        intData = parseInt(kuchbhi)
+        console.log(typeof intData);
+
+        if (kuchbhi > 1 && kuchbhi <= 2) {
+            console.log("inside if");
+         
+            if (confirm("are you ready for next step?")) {
+                if (confirm("are you sure??")) {
+                    if (confirm("are you double sure??")) {
+                        alert("Thank you");
+                    }
+                    else {
+                        alert("kyu click kiya");
+                    }
+                }
+                else {
+                    alert("get out");
+                }
+            }
+            else {
+                console.log("inside second else");
+            }
+        } else {
+            console.log("inside else");
+        }
+
+
+
+    </script>
+</body>
+
+</html>

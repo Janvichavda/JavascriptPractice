@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sliders img {
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sliders">
+        <img class="slids" src="i/1.png" alt="">
+        <img class="slids" src="i/2.png" alt="">
+        <img class="slids" src="i/3.png" alt="">
+        <img class="slids" src="i/4.png" alt="">
+    </div>
+    <script>
+        let Sliderdata = document.getElementsByClassName("slids");
+        let counter = 0
+        function Slider() {
+            for (let index = 0; index < Sliderdata.length; index++) {
+                Sliderdata[index].style.display = "none"
+                // Sliderdata[index].classList.remove("slider-effect")
+            }
+            if (counter >= Sliderdata.length) {
+                counter = 0
+            }
+            console.log("called", counter);
+            Sliderdata[counter].style.display = "block"
+            counter++;
+            setTimeout(Slider, 3000);
+        }
+        Slider()
+    </script>
+</body>
+
+</html>
