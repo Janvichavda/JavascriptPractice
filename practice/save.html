@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- <form action="" method="post">
+
+
+    </form>
+    <button id="submit">Submit</button>
+    <button onclick='addInput()'>+Add input</button>
+    <div id='input-cont'>
+    </div>
+    <div id='input-another'>
+    </div> -->
+
+    <form id="myForm">
+        <div id="input-container">
+            <!-- Initial input fields -->
+            <input type="text" class="myInput" placeholder="Type something">
+            <input type="text" class="myDescription" placeholder="Type Description">
+        </div>
+        <button type="button" id="addInput">+ Add Input</button>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+    <script>
+        //Selectors
+
+        const submitBtn = document.getElementById("submit");
+        const container = document.getElementById('input-cont');
+        const containertwo = document.getElementById('input-another');
+
+
+        //Events
+
+
+        function addInput() {
+            let input = document.createElement('input');
+            input.classList.add("myid");
+            input.placeholder = 'Type something';
+            input.type = "text";
+            input-container.appendChild(input);
+
+            let inputtwo = document.createElement('input');
+            inputtwo.classList.add("myidtwo");
+            inputtwo.placeholder = 'Type Description';
+            inputtwo.type = "text";
+            input-container.appendChild(inputtwo);
+
+        }
+
+        submitBtn.addEventListener('click', () => {
+            function showAlert() {
+
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // var myText = title.value + " ~ " + description.value;
+                // var myText = getinputid.value;
+                // alert(myText);
+                let inputElements = document.querySelectorAll(".myid");
+                let inputanother = document.querySelectorAll(".myidtwo");
+
+                const formData = [];
+
+
+
+                let inputValues = Array.from(inputElements).map(input => input.value);
+                let myText = inputValues.join(" ~ ");
+                alert(myText);
+
+
+                let inputValuestwo = Array.from(inputanother).map(inputtwo => inputtwo.value);
+                let myTexttwo = inputValuestwo.join(" ~ ");
+                alert(myTexttwo);
+            }
+            showAlert()
+        });
+
+        // var input = document.createElement("input");
+        // input.type = "text";
+        // input.className = "css-class-name"; // set the CSS class
+        // document.querySelector('div').appendChild(input);
+
+        // container.addEventListener('click', () => {
+        //     function inputfun() {
+        //         let input = document.createElement('input');
+        //         input.placeholder = 'Type something';
+        //         container.appendChild(input);
+        //     }
+        //     inputfun()
+        // });
+
+
+    </script>
+</body>
+
+</html>

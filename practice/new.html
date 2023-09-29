@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input Fields</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <form id="myForm">
+        <div id="input-container">
+            <!-- Initial input fields -->
+            <input type="text" class="myInput" placeholder="Type something">
+            <input type="text" class="myDescription" placeholder="Type Description">
+        </div>
+        <button type="button" id="addInput">+ Add Input</button>
+        <input type="submit" value="Submit">
+    </form>
+    
+    <script>
+        // Selectors
+        const addInputBtn = document.getElementById("addInput");
+        const inputContainer = document.getElementById("input-container");
+        const form = document.getElementById("myForm");
+
+        // Event listeners
+        addInputBtn.addEventListener("click", addInput);
+        form.addEventListener("submit", handleSubmit);
+
+        // Function to add input fields
+        function addInput() {
+            const input = document.createElement("input");
+            input.classList.add("myInput");
+            input.placeholder = 'Type something';
+            input.type = "text";
+            inputContainer.appendChild(input);
+
+            const inputDescription = document.createElement('input');
+            inputDescription.classList.add("myDescription");
+            inputDescription.placeholder = 'Type Description';
+            inputDescription.type = "text";
+            inputContainer.appendChild(inputDescription);
+        }
+
+        // Function to handle form submission
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            const inputElements = document.querySelectorAll(".myInput");
+            const inputDescriptions = document.querySelectorAll(".myDescription");
+            
+            // Gather and process the form data
+            const formData = [];
+            inputElements.forEach((input, index) => {
+                const description = inputDescriptions[index].value;
+                formData.push(`${input.value} - ${description}`);
+            });
+
+            // Display form data in an alert
+            alert("Form Data:\n" + formData.join("\n"));
+        }
+    </script>
+</body>
+</html>

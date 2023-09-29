@@ -61,7 +61,7 @@
                 if (this.name === "email") {
                     var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
                     if (inputValue == "") {
-                        errorElement.innerText = "This field is required!!!";
+                        errorElement.innerText = "Email is required!!!";
                     }
                     else if (!emailPattern.test(inputValue)) {
                         errorElement.innerText = "Invalid email format!";
@@ -73,7 +73,7 @@
                 else if (this.name === "password") {
                     var PassEx = /^([a-zA-Z0-9_\.\-\@])+$/
                     if (inputValue === "") {
-                        errorElement.innerText = "This field is required!!!";
+                        errorElement.innerText = "Password is required!!!";
                     }
                     else if (!PassEx.test(inputValue)) {
                         errorElement.innerText = "Invalid password format!";
@@ -85,7 +85,7 @@
 
                 else {
                     if (inputValue === "") {
-                        errorElement.innerText = "This field is required!!!";
+                        errorElement.innerText = "Username is required!!!";
                     } else {
                         errorElement.innerText = "";
                     }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .popup-open {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="janvi">
+        <h1>janvi chavda</h1>
+    </div>
+    <button id="b">Name</button>
+    <script>
+        const button = document.getElementById('b');
+        // console.log("button:", button)
+        // const janvi = document.getElementById('janvi');
+
+
+        button.addEventListener('click', () => {
+            document.body.classList.add('popup-open');
+        });
+    </script>
+</body>
+
+</html>

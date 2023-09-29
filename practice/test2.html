@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="disp" id="disp"></div>
+    <script>
+        function printStarPyramid(rows) {
+            let result = '';
+            for (let i = 1; i <= rows; i++) {
+                let pattern = '';
+                for (let j = 1; j <= rows - i; j++) {
+                    pattern += '&nbsp' + '&nbsp'; // Add spaces for indentation
+                }
+                for (let k = 1; k <= 2 * i - 1; k++) {
+                    pattern += '*'; // Add stars for the pyramid
+                }
+                // console.log(pattern);
+                result += pattern + '<br>';
+            }
+            document.getElementById('disp').innerHTML = result;
+        }
+        // Call the function with the number of rows you want in the pyramid
+        printStarPyramid(7);
+    </script>
+</body>
+
+</html>
