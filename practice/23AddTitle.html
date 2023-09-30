@@ -26,6 +26,8 @@
             border: 1px solid white;
             padding: 20px;
             border-radius: 4px;
+            width: 50%;
+            margin: 0 auto;
         }
 
         .myInput {
@@ -33,24 +35,19 @@
             padding: 7px;
             border-radius: 5px;
             border: solid grey;
-
         }
 
         .myDescription {
             flex: 1 0 120px;
             padding: 7px;
             border-radius: 5px;
-            /* outline: 2px solid; */
-            /* border: none; */
             border: solid grey;
-
         }
 
         button {
             flex: 1 0 60px;
             padding: 7px;
             background-color: rgb(9, 189, 9);
-            /* border: none; */
             border-radius: 5px;
             border: solid grey;
         }
@@ -60,23 +57,15 @@
 <body>
     <div class="flex-container">
         <form id="myForm">
-            <div id="input-container">
-                <!-- Initial input fields -->
-                <input type="text" class="myInput" placeholder="Type Title">
-                <input type="text" class="myDescription" placeholder="Type Description">
-            </div>
             <button type="button" id="addInput">+ Add Input</button>
-            <!-- <button>
-                <input type="submit" value="Submit">
-            </button> -->
             <button>Submit</button>
+            <br>
         </form>
     </div>
 
     <script>
         // Selectors
         const addInputBtn = document.getElementById("addInput");
-        const inputContainer = document.getElementById("input-container");
         const form = document.getElementById("myForm");
 
         // Event listeners
@@ -89,13 +78,18 @@
             input.classList.add("myInput");
             input.placeholder = 'Type Title';
             input.type = "text";
-            inputContainer.appendChild(input);
+            form.appendChild(input);
 
             const inputDescription = document.createElement('input');
             inputDescription.classList.add("myDescription");
             inputDescription.placeholder = 'Type Description';
             inputDescription.type = "text";
-            inputContainer.appendChild(inputDescription);
+            form.appendChild(inputDescription);
+
+            const lineBreak = document.createElement("br");
+            form.appendChild(lineBreak);
+            form.appendChild(lineBreak);
+
         }
 
         // Function to handle form submission
@@ -111,6 +105,7 @@
             });
 
             alert("Form Data:\n" + formData.join("\n"));
+
         }
     </script>
 </body>
