@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title of the document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+</head>
+
+<body>
+    <p><input type="checkbox" id="checkId"> Are you sure?</p>
+    <button type="button" class="check">Yes</button>
+    <button type="button" class="uncheck">No</button>
+    <script>
+        $(document).ready(function () {
+            $(".check").click(function () {
+                $("#checkId").prop("checked", true);
+            });
+            $(".uncheck").click(function () {
+                $("#checkId").prop("checked", false);
+            });
+        });
+    </script>
+</body>
+
+</html>

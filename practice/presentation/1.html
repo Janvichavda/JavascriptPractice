@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: blanchedalmond;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="handler" onclick="neeraj()">Event Handler</button>
+    <button id="listener">Event Listener</button>
+
+    <p id="red"></p>
+    <p id="blue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis veniam numquam nulla! Recusandae
+        quibusdam maxime itaque atque nisi. Dolor officiis quae voluptates pariatur non nesciunt, animi voluptate
+        consectetur dolores laborum.</p>
+
+
+    <script>
+        const handler = document.getElementById("handler")
+        const listener = document.getElementById("listener")
+        const red = document.getElementById("red")
+        const blue = document.getElementById("blue")
+
+        listener.addEventListener('click', () => {
+            // red.style.backgroundColor = 'red';
+            red.innerHTML += "Hello World!<br>";
+            console.log("listener")
+        })
+
+        // listener.addEventListener('click', janvi);
+        // function janvi() {
+        // red.innerHTML += "Hello World!<br>";
+        //     // red.style.backgroundColor = 'red';
+
+        // }
+
+
+        function neeraj() {
+            blue.style.backgroundColor = "blue";
+            console.log("handler");
+        }
+
+    </script>
+</body>
+    
+</html>

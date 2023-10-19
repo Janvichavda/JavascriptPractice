@@ -21,9 +21,7 @@ function addToDo(event){
  const todoDiv = document.createElement("div");
      todoDiv.classList.add("todo");
 
-    //  if (todoDiv==" "){
-    //   errorElement.innerText = "This field is required!!!";
-    //  }
+   
      
  //creating li
  const newTodo = document.createElement("li");
