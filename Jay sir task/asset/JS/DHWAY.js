@@ -1,3 +1,50 @@
+// --hamburger--
+const bar = document.querySelector(".menu_bar");
+const navbar = document.querySelector("nav");
+const navbarli = document.querySelectorAll("nav .navbar li");
+
+bar.addEventListener("click", () => {
+    bar.classList.toggle("active");
+    navbar.classList.toggle("active");
+});
+
+let btn = document.querySelector(".menu_bar");
+let icon = btn.querySelector(".fa-bars");
+btn.onclick = function () {
+    if (icon.classList.contains("fa-bars")) {
+        icon.classList.replace("fa-bars", "fa-times");
+    } else {
+        icon.classList.replace("fa-times", "fa-bars");
+    }
+};
+
+window.addEventListener("scroll", function () {
+    // console.log("test");
+    let TopScrolled =
+        window.pageYOffset || document.documentElement.scrollTop;
+    // console.log(TopScrolled);
+    if (TopScrolled > 10) {
+        document.querySelector("nav").classList.remove("active");
+        icon.classList.replace("fa-times", "fa-bars");
+    } else {
+        // document.getElementById("main-header").classList.add("fixedmenu");
+    }
+});
+// hamburger-end
+
+var swiper = new Swiper(".mySwiper1", {
+    spaceBetween: 100,
+    effect: "slide",
+    loop: true,
+    navigation: {
+        nextEl: ".next1",
+        prevEl: ".prev1",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
 
 var swiper = new Swiper(".mySwiper3", {
     slidesPerView: "1",
