@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .r {
+            font-size: 50px;
+            margin: 20px 0;
+            color: rgb(98, 2, 2);
+        }
+
+        body {
+            background-image: url(images/taj.jpg);
+        }
+
+        #cob,
+        .myInput,
+        #dynamicSelect,
+        .co {
+            font-size: 20px;
+            margin: 15px 70px;
+            padding: 10px 30px;
+            background-color: rgb(136, 79, 79);
+            border: none;
+            border-radius: 0px;
+            color: rgb(234, 201, 201)
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="post">
+        <table align="center">
+            <tr>
+                <td>
+                    <div class="r">Restaurant Booking</div>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="text" class="co">Name</label> <br>
+                    <input type="text" id="text" class="co" placeholder="Janvi">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="tel" class="co">Phone</label> <br>
+                    <input type="tel" id="tel" class="co" placeholder="+91">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email" class="co">Email</label> <br>
+                    <input type="email" id="email" class="co" placeholder="@gmail.com">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="Number" class="co">No. of Person</label> <br>
+                    <input type="Number" id="Number" class="co" placeholder="0">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <select name="cob" id="cob">
+                        <option value="select cob">Select</option>
+                        <option value="Full" id="fulldateid">Full day booking</option>
+                        <option value="Half">Half day booking</option>
+                        <option value="Hour">Hourly booking</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="hellodiv"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="slotdiv"></div>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+    <script>
+        (function () {
+            const fulldate = document.getElementById("fulldateid");
+            const hdiv = document.getElementById("hellodiv");
+            const slotdiv = document.getElementById("slotdiv");
+            let timeInput;
+
+            document.getElementById("cob").addEventListener("change", fullfunc);
+
+            function createInput(type, parentElement) {
+                const existingInput = parentElement.querySelector('.myInput');
+                if (existingInput) {
+                    return existingInput;
+                }
+
+                const input = document.createElement("input");
+                input.classList.add("myInput");
+                input.type = type;
+                parentElement.appendChild(input);
+                return input;
+            }
+
+            function createSelect() {
+                const selectElement = document.createElement("select");
+                selectElement.id = "dynamicSelect";
+
+                const options = ["Breakfast", "Lunch", "Dinner"];
+
+                options.forEach(optionText => {
+                    const optionElement = document.createElement("option");
+                    optionElement.value = optionText.toLowerCase().replace(/\s/g, '');
+                    optionElement.text = optionText;
+                    selectElement.appendChild(optionElement);
+                });
+
+                slotdiv.appendChild(selectElement);
+            }
+
+            function fullfunc() {
+                const selectedOption = document.getElementById("cob").value;
+
+                hdiv.innerHTML = "";
+                slotdiv.innerHTML = "";
+
+                if (selectedOption === "Full" || selectedOption === "Half" || selectedOption === "Hour") {
+
+                    createInput("date", hdiv.parentElement);
+                    if (selectedOption === "Full") {
+                        if (timeInput) {
+                            timeInput.parentElement.removeChild(timeInput);
+                            timeInput = undefined;
+                        }
+                    } else if (selectedOption === "Half") {
+                        createSelect();
+
+                        if (timeInput) {
+                            timeInput.parentElement.removeChild(timeInput);
+                            timeInput = undefined;
+                        }
+                    }
+
+                    else if (selectedOption === "Hour") {
+                        timeInput = createInput("time", slotdiv.parentElement);
+                    }
+
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
