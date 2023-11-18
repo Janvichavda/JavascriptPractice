@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input Fields</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            padding: 20px;
+            border-radius: 4px;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .myInput {
+            flex: 1 0 140px;
+            padding: 7px;
+            border-radius: 5px;
+            border: solid grey;
+        }
+
+        .myDescription {
+            flex: 1 0 120px;
+            padding: 7px;
+            border-radius: 5px;
+            border: solid grey;
+        }
+
+        button {
+            flex: 1 0 60px;
+            padding: 7px;
+            background-color: rgb(9, 189, 9);
+            border-radius: 5px;
+            border: solid grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" id="addInput">+ Add Input</button>
+                        <button id="submitdata">Submit</button>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        // Selectors
+        const addInputBtn = document.getElementById("addInput");
+        const sub = document.getElementById("submitdata");
+
+        // Event listeners
+        addInputBtn.addEventListener("click", addInput);
+        sub.addEventListener("click", handleSubmit);
+
+        // Function to add input fields
+        function addInput() {
+            const input = document.createElement("input");
+            input.classList.add("myInput");
+            input.placeholder = 'Type Title';
+            input.type = "text";
+            addInputBtn.parentElement.appendChild(input);
+
+            const inputDescription = document.createElement('input');
+            inputDescription.classList.add("myDescription");
+            inputDescription.placeholder = 'Type Description';
+            inputDescription.type = "text";
+            addInputBtn.parentElement.appendChild(inputDescription);
+
+            const lineBreak = document.createElement("br");
+            addInputBtn.parentElement.appendChild(lineBreak);
+            addInputBtn.parentElement.appendChild(lineBreak);
+
+        }
+
+        // Function to handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const inputElements = document.querySelectorAll(".myInput");
+            const inputDescriptions = document.querySelectorAll(".myDescription");
+
+            const formData = [];
+            inputElements.forEach((input, index) => {
+                const description = inputDescriptions[index].value;
+                formData.push(`${input.value} - ${description}`);
+            });
+
+            alert("Form Data:\n" + formData.join("\n"));
+
+        }
+    </script>
+</body>
+
+</html>

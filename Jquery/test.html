@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        header {
+            background-color: #373F50;
+            color: white;
+            line-height: 60px;
+        }
+
+        .navbar,
+        .template-menu,
+        .search-profile {
+            display: none;
+        }
+
+        .navbar,
+        .template-menu,
+        .search-profile {
+            display: none;
+        }
+
+        .navbar li {
+            display: inline-block;
+        }
+
+        .navbar li a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .ml-a {
+            margin-left: auto;
+        }
+
+        .logo {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .container-fluid {
+            width: 97%;
+            margin: 0 auto;
+        }
+
+        .dispnavmenu {
+            display: block !important;
+        }
+
+        .dispnavmenu li {
+            display: block !important;
+        }
+
+        @media (min-width:700px) {
+
+            .navbar,
+            .template-menu,
+            .search-profile {
+                display: block;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="logo">
+
+                    W3layouts
+                </div>
+                <i class="fa-solid fa-bars" id="toggle-menu"></i>
+                <div class="template-menu">
+                    Web Templates <i class="fa-sharp fa-solid fa-caret-down"></i>
+                </div>
+                <nav class="navbar" id="main-navbar">
+                    <ul>
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">wordPress themes</a></li>
+                        <li><a href="#">1W3</a></li>
+                    </ul>
+                </nav>
+                <div class="search-profile ml-a">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-regular fa-user"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.getElementById('toggle-menu').addEventListener("click", function () {
+            console.log("Called");
+            $("#main-navbar").toggleClass("dispnavmenu");
+        })
+    </script>
+</body>
+
+</html>
