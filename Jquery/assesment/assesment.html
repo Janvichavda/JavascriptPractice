@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        #password-strength {
+            margin-top: 10px;
+            color: white;
+            padding: 5px;
+        }
+
+        #password {
+            border: 1px solid blue;
+        }
+
+        .weak {
+            background-color: #FF6347;
+        }
+
+        .medium {
+            background-color: #FFD700;
+        }
+
+        .strong {
+            background-color: #00FA9A;
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span id="password-strength"></span>
+
+    <script>
+        $(document).ready(function () {
+            $('#password').on('input', function () {
+                var password = $(this).val();
+                var strength = checkPasswordStrength(password);
+
+                // Update the visual indicator
+                var indicator = $('#password-strength');
+                indicator.removeClass('weak medium strong').text('');
+
+                if (strength === 'weak') {
+                    indicator.addClass('weak').text('Weak');
+                } else if (strength === 'medium') {
+                    indicator.addClass('medium').text('Medium');
+                } else if (strength === 'strong') {
+                    indicator.addClass('strong').text('Strong');
+                }
+            });
+
+            function checkPasswordStrength(password) {
+                // Check the password strength logic and return 'weak', 'medium', or 'strong'
+                // You can customize this function based on your specific criteria
+                var strength = 'weak';
+
+                if (password.length >= 8) {
+                    strength = 'medium';
+                }
+
+                if (password.match(/[a-zA-Z]/) && password.match(/[0-9]/)) {
+                    strength = 'strong';
+                }
+
+                return strength;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
