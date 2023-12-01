@@ -2,7 +2,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* border: 1px solid blue; */
+}
+
+body {
+  /* overflow-x: hidden; */
 }
 
 
@@ -118,8 +121,8 @@ nav.active {
   bottom: 10px;
   left: 0;
   right: 0;
-  /* width: 1.5px;
-  height: 2px; */
+  width: 1.5px;
+  height: 10px;
   display: none;
   margin: auto;
   background-color: #ab9169;
@@ -265,6 +268,14 @@ nav.active {
 
 /* --hompage sec2 start-- */
 
+.t {
+  top: 0;
+}
+
+.l {
+  z-index: 99999999;
+}
+
 .home_sec2_text {
   width: 60%;
   margin: 0 auto;
@@ -278,6 +289,7 @@ nav.active {
 .home_sec2_text p {
   padding: 10px 0;
 }
+
 
 /* --hompage sec2 end-- */
 
@@ -380,8 +392,8 @@ nav.active {
 }
 
 .cir-icon p {
-  padding: 20px 0;
-  font-size: 15px;
+  margin: 20px 0;
+  font-size: 17px;
   color: #9f978d;
 }
 
@@ -394,7 +406,7 @@ nav.active {
 }
 
 .pad {
-  padding: 20px 0;
+  padding-top: 20px;
 }
 
 /* 
@@ -423,6 +435,7 @@ nav.active {
   display: flex;
   padding: 20px 0;
   justify-content: center;
+  padding: 30px 0;
 }
 
 .circle-arrow button {
@@ -456,8 +469,14 @@ nav.active {
   background-color: #fff;
   padding: 50px;
   border-radius: 10px;
-  border-bottom: 1px solid #372d1f;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review_card:hover {
+
+  border-bottom: 4px solid #635035;
+  transition: all 0.2s ease-in-out;
+
 }
 
 .user_img {
@@ -566,36 +585,43 @@ nav.active {
 
 /* --about us end-- */
 .about_us_img {
-  width: 80%;
-  margin: 0 auto;
+  /* width: 80%; */
+  /* margin: 0 auto; */
+}
+
+.brown {
+  color: #372d1f;
 }
 
 .about_us_title {
-  font-size: 40px;
+  font-size: 50px;
   text-shadow: #4f4a4a38 1px 1px;
-  padding: 20px 0;
+  padding-bottom: 40px;
   color: #372d1f;
 }
 
 .about_us_text p {
   font-size: 30px;
-  color: #4e3e26;
+  color: grey;
 }
 
+
 .about_us_text {
-  padding: 10px 0;
-  font-size: 30px;
+  padding: 30px;
+  /* font-size: 30px; */
 }
 
 .about_us_text a {
   color: #372d1f;
-  padding: 5px 0;
+  /* padding: 5px 0; */
+  font-size: 25px;
+
 }
 
 .about_us_text a i {
   color: #4e3e26;
   padding: 5px;
-  font-size: 40px;
+  /* font-size: 40px; */
 }
 
 
@@ -799,7 +825,7 @@ input[type="checkbox"] {
   transition: all 0.5s;
   border-radius: 20px;
   margin: 5px;
-  /* background-color: #efe4d2; */
+  background-color: white;
 }
 
 .collapse_card {
@@ -1559,7 +1585,7 @@ footer {
 
 @media (min-width: 1400px) {
   .container {
-    width: 1300px;
+    width: 1399px;
   }
 
 

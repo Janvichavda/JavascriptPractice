@@ -46,38 +46,70 @@ var swiper = new Swiper(".mySwiper1", {
     },
 });
 
-var swiper = new Swiper(".mySwiper3", {
-    slidesPerView: "1",
-    centeredSlides: true,
-    loop: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    spaceBetween: 30,
+// var swiper = new Swiper(".mySwiper3", {
+//     slidesPerView: "1",
+//     centeredSlides: true,
+//     loop: true,
+//     autoplay: {
+//         delay: 2500,
+//         disableOnInteraction: false,
+//     },
+//     spaceBetween: 30,
 
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
+//     pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true,
+//     },
 
-    breakpoints: {
-        640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-        },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-        },
-        1024: {
-            slidesPerView: 2,
-            spaceBetween: 50,
-        },
-    },
-});
+//     breakpoints: {
+//         640: {
+//             slidesPerView: 1,
+//             spaceBetween: 20,
+//         },
+//         768: {
+//             slidesPerView: 2,
+//             spaceBetween: 40,
+//         },
+//         1024: {
+//             slidesPerView: 2,
+//             spaceBetween: 50,
+//         },
+//     },
+// });
+
+// var swiper = new Swiper(".mySwiper3", {
+//     slidesPerView: "1",
+//     centeredSlides: true,
+//     loop: true,
+//     autoplay: {
+//         delay: 2500,
+//         disableOnInteraction: false,
+//     },
+//     spaceBetween: 30,
+
+//     pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true,
+//     },
+
+//     breakpoints: {
+//         640: {
+//             slidesPerView: 1,
+//             spaceBetween: 20,
+//         },
+//         768: {
+//             slidesPerView: 2,
+//             spaceBetween: 40,
+//         },
+//         1024: {
+//             slidesPerView: 2,
+//             spaceBetween: 50,
+//         },
+//     },
+// });
 
 
+// our blogs slider
 
 var swiper = new Swiper(".mySwiper4", {
     slidesPerView: 1,
@@ -110,6 +142,7 @@ var swiper = new Swiper(".mySwiper4", {
         },
     },
 });
+// our blogs slider end 
 
 // --our team slider--
 
