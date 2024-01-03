@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>The three most widely used type conversions are to string, to number, and to boolean.</p>
+
+    <p>String Conversion - Occurs when we output something. Can be performed with String(value). The conversion to
+        string is usually obvious for primitive values.</p>
+
+    <p>Numeric Conversion - Occurs in math operations. Can be performed with Number(value).</p>
+
+    <p>The conversion follows the rules:</p>
+    <input type="text" name="val1" id="val1">
+    <input type="text" name="val2" id="val2">
+    <!-- <input onclick="clickHandle()" type="button" name="btn" id="btn"> -->
+    <input type="button" value="Add" name="btn" id="btn">
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            let v1 = document.getElementById("val1").value
+            let v2 = document.getElementById("val2").value
+            console.log(v1);
+            console.log(v2);
+            console.log(parseFloat(v1) + parseInt(v2));
+            // console.log(parseFloat(v1) + (v2));
+            // console.log("called");
+        })
+    </script>
+</body>
+
+</html>
