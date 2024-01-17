@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: black;
+            padding: 0 50px;
+        }
+
+        .slick-prev {
+            left: 15px;
+            z-index: 999;
+        }
+
+        .slick-next {
+            right: 15px;
+            z-index: 999;
+        }
+
+        .slick-slider button {
+            background-color: #000;
+        }
+
+        .slick-slider button:hover {
+            background-color: #000;
+        }
+
+        .msg_box {
+            width: 50%;
+            height: 50vh;
+            margin: 0 auto;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .imgwrap img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .slider-nav div img {
+            width: 100%;
+        }
+
+        .col_50 {
+            width: 50%;
+        }
+
+        .imgwrap1 {
+            padding: 0 10px;
+            width: 70%;
+        }
+
+        .imgwrap1 img {
+            width: 100%;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .justify_content {
+            justify-content: space-between;
+        }
+
+        .had {
+            padding: 20px 0;
+            background-color: black;
+        }
+
+        .popup-open {
+            overflow: hidden;
+        }
+
+        .col {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="openbtn">Pop Up</button>
+    <div class="msg_box" id="messageBox">
+
+        <div class="had">
+            <div class="row justify_content" style="padding: 0 20px;">
+                <div class="col">
+                    Cluches
+                </div>
+                <div class="col">
+                    <button style="font-size: 20px;" id="close_btn">&times;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col_50">
+                <div class="main">
+
+                    <div class="slider-for">
+                        <div class="imgwrap">
+                            <img src="img/purse.jpeg" alt="">
+                        </div>
+                        <div class="imgwrap">
+                            <img src="img/purse2.jpeg" alt="">
+                        </div>
+                        <div class="imgwrap">
+                            <img src="img/purse3.jpeg" alt="">
+                        </div>
+                        <div class="imgwrap">
+                            <img src="img/purse4.jpeg" alt="">
+                        </div>
+                        <div class="imgwrap">
+                            <img src="img/purse1.jpeg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="slider slider-nav">
+                        <div class="imgwrap1">
+                            <img src="img/purse.jpeg" alt="">
+                        </div>
+                        <div class="imgwrap1">
+                            <img src="img/purse1.jpeg" alt="">
+                        </div>
+                        <div class="imgwrap1">
+                            <img src="img/purse3.jpeg" alt="">
+                        </div>
+                        <div class="imgwrap1">
+                            <img src="img/purse4.jpeg" alt="">
+                        </div>
+                        <div class="imgwrap1">
+                            <img src="img/purse1.jpeg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col_50">
+
+                <button>Buy Now</button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <img style="display: block;" src="img/purseall1.webp" alt="">
+    <div class="col_50">
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam quam ipsa repellendus iste sapiente nam
+            molestias illo! Maiores ipsa aspernatur, ab assumenda, molestias ducimus obcaecati ipsum rerum adipisci
+            beatae nulla iusto eveniet eaque accusamus amet recusandae aliquid minus doloremque, sapiente architecto
+            possimus veniam at officiis perspiciatis! Nam vitae molestiae asperiores, reprehenderit iusto nostrum
+            quam
+            consequatur, minima iste labore laboriosam impedit deserunt officiis? Optio corporis dolorem voluptas et
+            ipsum deserunt accusamus aspernatur atque iure in? Aliquam dolorum cum, voluptatum omnis, asperiores
+            reprehenderit mollitia veniam, provident incidunt unde id molestias voluptate impedit libero
+            praesentium?
+            Repellat voluptatum exercitationem veniam non deserunt doloribus quibusdam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti corporis illo minus in eveniet odio
+            perspiciatis beatae. Est explicabo totam illo quia fuga enim minus architecto molestias quos molestiae
+            earum
+            inventore rem temporibus ratione eligendi corporis ea sunt odit voluptate accusamus, doloribus ipsam et
+            perferendis dolorem. Natus vitae placeat quisquam ullam corrupti tempore. Voluptate cupiditate placeat
+            quia
+            eligendi, officiis sunt veritatis modi tenetur rerum, quasi enim neque tempora? Minus veritatis tenetur
+            facilis est reiciendis repudiandae quibusdam quidem repellendus tempora doloribus exercitationem commodi
+            ullam quam vitae, quia minima assumenda, necessitatibus nulla ab inventore alias illo ipsum recusandae
+            nam?
+            Perferendis, nemo a?
+        </p>
+    </div>
+    <img style="display: block;" src="img/purse all.webp" alt="">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        //selectors
+
+        const openBtn = document.getElementById('openbtn');
+        const messageBox = document.getElementById('messageBox');
+        const closeBtn = document.getElementById('close_btn');
+
+        //Event
+        openBtn.addEventListener('click', () => {
+            messageBox.style.display = 'block';
+            document.body.classList.add('popup-open');
+        })
+
+        closeBtn.addEventListener('click', () => {
+            messageBox.style.display = 'none';
+            document.body.classList.remove('popup-open');
+        })
+
+        $(document).ready(function () {
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                fade: true,
+                asNavFor: '.slider-nav',
+                dots: false,
+                speed: 300,
+                infinite: true,
+                autoplaySpeed: 5000,
+                autoplay: false,
+                responsive: [
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            });
+        });
+
+        $(document).ready(function () {
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                asNavFor: '.slider-for',
+                focusOnSelect: true,
+                dots: false,
+                speed: 300,
+                infinite: true,
+                autoplaySpeed: 5000,
+                autoplay: false,
+                responsive: [
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
