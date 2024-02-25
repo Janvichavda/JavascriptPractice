@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding and viewport for responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the document -->
+    <title>Document</title>
+    <!-- Define some styles using CSS -->
+    <style>
+        .r {
+            /* Styles for a class 'r' */
+            font-size: 50px;
+            margin: 20px 0;
+            color: rgb(98, 2, 2);
+        }
+
+        body {
+            /* Background image for the body */
+            background-image: url(images/taj.jpg);
+        }
+
+        #cob,
+        .myInput,
+        #dynamicSelect,
+        .co {
+            /* Styles for various elements using classes and IDs */
+            font-size: 20px;
+            margin: 10px 70px;
+            padding: 10px 30px;
+            background-color: rgb(136, 79, 79);
+            border: none;
+            border-radius: 0px;
+            color: rgb(234, 201, 201)
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start of the HTML body -->
+
+    <!-- Form for restaurant booking -->
+    <form action="post">
+        <!-- Table for organizing form elements -->
+        <table align="center">
+            <tr>
+                <td>
+                    <!-- Heading for the form -->
+                    <div class="r">Restaurant Booking</div>
+                </td>
+            </tr>
+
+            <!-- Input field for Name -->
+            <tr>
+                <td>
+                    <label for="text" class="co">Name</label> <br>
+                    <input type="text" id="text" class="co" placeholder="Janvi">
+                </td>
+            </tr>
+
+            <!-- Input field for Phone -->
+            <tr>
+                <td>
+                    <label for="tel" class="co">Phone</label> <br>
+                    <input type="tel" id="tel" class="co" placeholder="+91">
+                </td>
+            </tr>
+
+            <!-- Input field for Email -->
+            <tr>
+                <td>
+                    <label for="email" class="co">Email</label> <br>
+                    <input type="email" id="email" class="co" placeholder="@gmail.com">
+                </td>
+            </tr>
+
+            <!-- Input field for Number of Persons -->
+            <tr>
+                <td>
+                    <label for="Number" class="co">No. of Person</label> <br>
+                    <input type="Number" id="Number" class="co" placeholder="0">
+                </td>
+            </tr>
+
+            <!-- Dropdown for type of booking -->
+            <tr>
+                <td>
+                    <select name="cob" id="cob">
+                        <option value="select cob">Select</option>
+                        <option value="Full" id="fulldateid">Full day booking</option>
+                        <option value="Half">Half day booking</option>
+                        <option value="Hour">Hourly booking</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Container for dynamic content based on the selected booking type -->
+            <tr>
+                <td>
+                    <div id="hellodiv"></div>
+                </td>
+            </tr>
+            <!-- Container for additional dynamic content based on the selected booking type -->
+            <tr>
+                <td>
+                    <div id="slotdiv"></div>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+    <!-- JavaScript section for dynamic behavior -->
+    <script>
+        (function () {
+            // Get references to relevant elements
+            const fulldate = document.getElementById("fulldateid");
+            const hdiv = document.getElementById("hellodiv");
+            const slotdiv = document.getElementById("slotdiv");
+            let timeInput;
+
+            // Add event listener for changes in the booking type dropdown
+            document.getElementById("cob").addEventListener("change", fullfunc);
+
+            // Function to create input elements dynamically
+            function createInput(type, parentElement) {
+                const existingInput = parentElement.querySelector('.myInput');
+                if (existingInput) {
+                    return existingInput;
+                }
+
+                const input = document.createElement("input");
+                input.classList.add("myInput");
+                input.type = type;
+                parentElement.appendChild(input);
+                return input;
+            }
+
+            // Function to create a dynamic select dropdown
+            function createSelect() {
+                const selectElement = document.createElement("select");
+                selectElement.id = "dynamicSelect";
+
+                const options = ["Breakfast", "Lunch", "Dinner"];
+
+                options.forEach(optionText => {
+                    const optionElement = document.createElement("option");
+                    optionElement.value = optionText.toLowerCase().replace(/\s/g, '');
+                    optionElement.text = optionText;
+                    selectElement.appendChild(optionElement);
+                });
+
+                slotdiv.appendChild(selectElement);
+            }
+
+            // Function to handle changes in the booking type dropdown
+            function fullfunc() {
+                // Get the selected booking type
+                const selectedOption = document.getElementById("cob").value;
+
+                // Clear existing dynamic content
+                hdiv.innerHTML = "";
+                slotdiv.innerHTML = "";
+
+                // Check the selected option and create dynamic content accordingly
+                if (selectedOption === "Full" || selectedOption === "Half" || selectedOption === "Hour") {
+                    createInput("date", hdiv.parentElement);
+
+                    if (selectedOption === "Full") {
+                        if (timeInput) {
+                            timeInput.parentElement.removeChild(timeInput);
+                            timeInput = undefined;
+                        }
+                    } else if (selectedOption === "Half") {
+                        createSelect();
+
+                        if (timeInput) {
+                            timeInput.parentElement.removeChild(timeInput);
+                            timeInput = undefined;
+                        }
+                    } else if (selectedOption === "Hour") {
+                        timeInput = createInput("time", slotdiv.parentElement);
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
